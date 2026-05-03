@@ -183,6 +183,10 @@ Inserte a continuación una captura de pantalla que muestre el resultado de ejec
 fichero `aleatorios.py` con la opción *verbosa*, de manera que se muestre el
 resultado de la ejecución de los tests unitarios.
 
+![Resultado de los tests unitarios - Parte 1](T4.1.png)
+
+
+![Resultado de los tests unitarios - Parte 1](T4.2.png)
 #### Código desarrollado
 
 Inserte a continuación el código de los métodos desarrollados en esta tarea, usando los
