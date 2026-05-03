@@ -193,17 +193,13 @@ Inserte a continuación el código de los métodos desarrollados en esta tarea, 
 comandos necesarios para que se realice el realce sintáctico en Python del mismo (no
 vale insertar una imagen o una captura de pantalla, debe hacerse en formato *markdown*).
 
+```python
 """
 Fichero: aleatorios.py
 Alumno: Steven Daniel Vizcaino Cedeño
 Descripción: Implementación de un generador de números aleatorios LGC 
              mediante una clase iteradora y una función generadora.
-```
-Fichero: aleatorios.py
-Alumno: Steven Daniel Vizcaino Cedeño
-Descripción: Implementación de un generador de números aleatorios LGC 
-             mediante una clase iteradora y una función generadora.
-
+"""
 
 class Aleat:
     """
@@ -233,16 +229,20 @@ class Aleat:
     1
     """
     def __init__(self, *, m=2**48, a=25214903917, c=11, x0=1212121):
+        """Inicializa los parámetros del generador por clave."""
         self.m, self.a, self.c, self.x = m, a, c, x0
 
     def __iter__(self):
+        """Devuelve el propio objeto como iterador."""
         return self
 
     def __next__(self):
+        """Calcula y devuelve el siguiente número pseudoaleatorio."""
         self.x = (self.a * self.x + self.c) % self.m
         return self.x
 
     def __call__(self, x0):
+        """Reinicia la secuencia con la semilla x0."""
         self.x = x0
 
 def aleat(*, m=2**48, a=25214903917, c=11, x0=1212121):
