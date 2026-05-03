@@ -199,6 +199,11 @@ Alumno: Steven Daniel Vizcaino Cedeño
 Descripción: Implementación de un generador de números aleatorios LGC 
              mediante una clase iteradora y una función generadora.
 """
+Fichero: aleatorios.py
+Alumno: Steven Daniel Vizcaino Cedeño
+Descripción: Implementación de un generador de números aleatorios LGC 
+             mediante una clase iteradora y una función generadora.
+"""
 
 class Aleat:
     """
@@ -209,10 +214,6 @@ class Aleat:
         a (int): Multiplicador.
         c (int): Incremento.
         x (int): Estado actual (semilla).
-
-    Métodos:
-        __next__(): Calcula el siguiente número pseudoaleatorio.
-        __call__(x0): Reinicia la semilla del generador.
 
     >>> rand = Aleat(m=32, a=9, c=13, x0=11)
     >>> for _ in range(4):
@@ -232,37 +233,21 @@ class Aleat:
     1
     """
     def __init__(self, *, m=2**48, a=25214903917, c=11, x0=1212121):
-        """Inicializa los parámetros. Los argumentos deben indicarse por clave."""
-        self.m = m
-        self.a = a
-        self.c = c
-        self.x = x0
+        self.m, self.a, self.c, self.x = m, a, c, x0
 
     def __iter__(self):
-        """Devuelve el iterador."""
         return self
 
     def __next__(self):
-        """Genera el siguiente número de la secuencia."""
         self.x = (self.a * self.x + self.c) % self.m
         return self.x
 
     def __call__(self, x0):
-        """Reinicia la secuencia con la semilla x0 (posicional)."""
         self.x = x0
-
 
 def aleat(*, m=2**48, a=25214903917, c=11, x0=1212121):
     """
     Función generadora de números aleatorios usando el algoritmo LGC.
-
-    Argumentos:
-        m, a, c: Parámetros del algoritmo LGC (por clave).
-        x0: Semilla inicial.
-
-    Retorna:
-        Genera una secuencia infinita de números pseudoaleatorios. 
-        Permite reiniciar la semilla mediante el método .send().
 
     >>> rand = aleat(m=64, a=5, c=46, x0=36)
     >>> for _ in range(4):
@@ -288,7 +273,6 @@ def aleat(*, m=2**48, a=25214903917, c=11, x0=1212121):
         recibido = yield x
         if recibido is not None:
             x = recibido
-
 
 if __name__ == "__main__":
     import doctest
