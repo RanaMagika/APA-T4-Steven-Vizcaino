@@ -198,12 +198,12 @@ Fichero: aleatorios.py
 Alumno: Steven Daniel Vizcaino Cedeño
 Descripción: Implementación de un generador de números aleatorios LGC 
              mediante una clase iteradora y una función generadora.
-"""
+```
 Fichero: aleatorios.py
 Alumno: Steven Daniel Vizcaino Cedeño
 Descripción: Implementación de un generador de números aleatorios LGC 
              mediante una clase iteradora y una función generadora.
-```
+
 
 class Aleat:
     """
@@ -277,7 +277,7 @@ def aleat(*, m=2**48, a=25214903917, c=11, x0=1212121):
 if __name__ == "__main__":
     import doctest
     doctest.testmod(verbose=True)
-    ```
+```
 #### Subida del resultado al repositorio GitHub y *pull-request*
 
 La entrega se formalizará mediante *pull request* al repositorio de la tarea.
